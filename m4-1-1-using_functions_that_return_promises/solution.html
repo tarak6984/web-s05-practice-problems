@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <p>Please open the console by clicking the wrench icon near the top-right corner of this browser.</p>
+  <p>These problems don't require that you write any code. For each problem you must guess what the output to the
+    console will be.</p>
+  <script>
+    /*
+    PROBLEM 1:
+    The greetAsynchronously function takes a name and returns a promise that fulfills a value in the future.
+    Which of the following console.logs will print true? Why? Think about it before checking the console.
+    */
+    function greetAsynchronously(name) {
+      return Promise.resolve(`Hello, ${name}!`) // don't worry about how this line works
+    }
+    const value = greetAsynchronously('Peter')
+    console.log('PROBLEM 1. Is value a string? -->', value instanceof String)
+    console.log('PROBLEM 1. Is value a promise? -->', value instanceof Promise)
+    /*
+    SOLUTION: greetAsynchronously returns a promise that represents the future value. Because a promise is an object with methods, this means it cannot be a string. So the first log statement should turn out false and the second one true.
+    */
+
+    /*
+    PROBLEM 2:
+    One of the functions below takes two numbers and returns their sum. The other one returns a promise that fulfills the sum in the future.
+    Which result will print to the console first, 7 or 12? Why? Think about it before checking the console.
+    */
+    function sumAsynchronously(a, b) {
+      return Promise.resolve(a + b) // don't worry about how this line works
+    }
+    function sumSynchronously(a, b) {
+      return a + b
+    }
+    console.log('PROBLEM 2:')
+    sumAsynchronously(3, 4).then(console.log) // the result will be 7
+    console.log(sumSynchronously(5, 7)) // the result will be 12
+    /*
+    SOLUTION: sumAsynchronously has its result handled (in this case printed) asynchronously, in a future when all pending synchronous work is done.
+    This means that we will first see number 12 printed in the console (sync work), and then 7 (future, async work).
+    */
+
+  </script>
+  <section
+    style="border: 2px solid blue; border-radius: 5px; padding: 10px; box-shadow: 5px 3px 3px orange; margin-top: 20px;">
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+      <br></br>
+    <h4>Remember to please try the practice problems first before looking at the solutions.</h4>
+    </p>
+  </section>
+</body>
+
+</html>

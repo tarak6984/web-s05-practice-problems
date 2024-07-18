@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <p>Your solutions for problems 1 and 2 will print in the Replit console. Problem 3 will render to the HTML below.</p>
+  <p>Please open the console by clicking the wrench icon near the top-right corner of this browser.</p>
+
+  <p id="error" style="color:red;"></p>
+  <script>
+    /*
+    DIRECTIONS: Below are solutions to all the practice problems for this learning objective.  You can try each solution by copying it into your "index.html" file and clicking "Run".
+    */
+    /*
+    PROBLEM 1:
+    The function evenOrOdd below takes a number (E.G. 7) and returns a promise which fulfills a string if the number is even, and rejects a different string if the number is odd.
+    Invoke the function, passing it number 7. Handle success by logging out the fulfilled value. Handle failure by logging out the rejected value. Try different nunbers.
+    */
+    function evenOrOdd(num) { // rejects if num not even
+      // Do not worry about how this function works internally
+      return num % 2 === 0
+        ? Promise.resolve(`${num} is even!`)
+        : Promise.reject(`${num} is odd.`)
+    }
+    // ENTER YOUR CODE HERE
+    evenOrOdd(7)
+      .then(result => { console.log(result) })
+      .catch(result => { console.log(result) })
+
+    /*
+    PROBLEM 2:
+    The function fetchData below returns a promise which sometimes fulfills a value object, but other times rejects an error object.
+    Invoke the function. Handle success by console logging "The data: " followed by the `data` property of the resolved value. Handle rejection by logging "The rejection: " followed by the `message` property of the rejected error.
+    */
+    function fetchData() {
+      // Do not worry about how this function works internally
+      return Math.floor(Math.random() * 2)
+        ? Promise.resolve({ data: 'Promises rock!' })
+        : Promise.reject(new Error('Server error, could not fetch data'))
+    }
+    // ENTER YOUR CODE HERE
+    fetchData()
+      .then(value => { console.log("The data: " + value.data) })
+      .catch(error => { console.log("The rejection: " + error.message) })
+    /*
+
+    PROBLEM 3:
+    The function queryDatabase below returns a promise that always rejects an error object.
+    Invoke the function and handle failure by saving the error message into a variable, turning it to ALL CAPS, and writing it to the DOM as text content for the p#error element found in the HTML above.
+   */
+    function queryDatabase() {
+      // Do not worry about how this function works internally
+      return Promise.reject(new Error('Cannot connect to the database'))
+    }
+    // ENTER YOUR CODE HERE
+    queryDatabase().catch(error => {
+      const message = error.message
+      const allCaps = message.toUpperCase()
+      document.querySelector('#error').textContent = allCaps
+    })
+
+  </script>
+  <section
+    style="border: 2px solid blue; border-radius: 5px; padding: 10px; box-shadow: 5px 3px 3px orange; margin-top: 20px;">
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+      <br></br>
+    <h4>Remember to please try the practice problems first before looking at the solutions.</h4>
+    </p>
+  </section>
+</body>
+
+</html>

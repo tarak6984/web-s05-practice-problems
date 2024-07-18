@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <p>To check for errors, please open the console by clicking the wrench icon near the top-right corner of this browser.
+  </p>
+  <p>Your solution should result in planets Saturn and Pluto rendering to the page.</p>
+
+  <script>
+    /*
+    {
+      name: "Saturn",
+      diameter: 120536,
+      rotation_period: 10.7,
+      rotation_around_sun: 10759,
+    }
+
+    👉 Complete the `planetBuilder` function below. This function expects as its argument an object like the one above, and must return a <section> like the one below.
+
+    <section class="planet">
+      <h3>Saturn</h3>
+      <div>
+        <p>Diameter: 120536 Km</p>
+        <p>Rotation: 10.7 hours</p>
+        <p>Orbital Period: 10759 days</p>
+      </div>
+    </section>
+
+    👉 The function is being called at the bottom of the script, and if your code is correct, planets should render to the page looking like the `design.png` file in this project.
+    👉 The work can be subdivided into 5 sub problems which are noted inside the function.
+    */
+    function planetBuilder(data) {
+      // PROBLEM 1: create the elements using `createElement`
+
+      // PROBLEM 2: establish the hierarchy/nesting of the elements using `appendChild`
+
+      // PROBLEM 3: add a class name "planet" to the section element using `classList`
+
+      // PROBLEM 4: add `textContent` to the heading and the paragraphs
+
+      // PROBLEM 5: return the section from the function
+
+    }
+
+    // ❗ Do not change the code below! It's there to test your function
+    document.body.appendChild(planetBuilder({
+      name: "Saturn", diameter: 120536, rotation_period: 10.7, rotation_around_sun: 10759
+    }))
+    document.body.appendChild(planetBuilder({
+      name: "Pluto", diameter: 2370, rotation_period: 153.3, rotation_around_sun: 90560
+    }))
+
+  </script>
+  <section>
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+      <br></br>
+    <h4>Remember to please try the
+      practice problems first before looking at the solutions.</h4>
+    </p>
+  </section>
+</body>
+
+<head>
+  <style>
+    section {
+      border: 2px solid blue;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 5px 3px 3px orange;
+      margin-top: 20px;
+    }
+
+    section.planet {
+      border-color: black;
+      box-shadow: initial;
+    }
+  </style>
+</head>
+
+</html>

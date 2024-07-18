@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <p>Your solutions to the problems will render to the DOM.</p>
+  <p>Errors will show in the console. Please open the console by clicking the wrench icon near the top-right corner of
+    this browser.</p>
+  <div id="planets"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+  <script>
+    /*
+    PROBLEM 1:
+    We are using Axios to request all planets in the Solar System, including Pluto of course. On success, loop over the planet objects, and for each planet, append to div#planets the markup shown below (Mercury used as an example):
+
+    <div>
+      <h3>Mercury</h3>
+      <p>Diameter: 4879 Km</p>
+      <p>Rotation: 58.6 hours</p>
+      <p>Orbital Period: 88 days</p>
+    </div>
+
+    When the problem is solved correctly, the page should look like the `design.png` file found inside this project.
+    */
+    const planets = 'https://webapis.bloomtechdev.com/planets'
+    axios.get(planets)
+      .then(res => {
+        const planets = res.data
+        planets.forEach(planet => {
+          if (planet.name == 'Pluto') return // <-- PROBLEM 2 SOLUTION
+          const { name, diameter, rotation_period, rotation_around_sun } = planet // <-- PROBLEM 1 SOLUTION
+          const container = document.createElement('div')
+          const planetName = document.createElement('h3')
+          const planetDiameter = document.createElement('p')
+          const rotation = document.createElement('p')
+          const rotationSun = document.createElement('p')
+          container.appendChild(planetName)
+          container.appendChild(planetDiameter)
+          container.appendChild(rotation)
+          container.appendChild(rotationSun)
+          planetName.textContent = planet.name
+          planetDiameter.textContent = `Diameter: ${planet.diameter} Km`
+          rotation.textContent = `Rotation: ${planet.rotation_period} hours`
+          rotationSun.textContent = `Orbital Period: ${planet.rotation_around_sun} days`
+          document.querySelector('#planets').appendChild(container)
+        })
+      })
+      .catch(err => {
+        console.log(`Something went wrong: ${err.message}`)
+      })
+    /*
+    PROBLEM 2:
+    Although this is misguided, find a way to prevent _planet_ Pluto from rendering to the DOM.
+    */
+  </script>
+  <section
+    style="border: 2px solid blue; border-radius: 5px; padding: 10px; box-shadow: 5px 3px 3px orange; margin-top: 20px;">
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+      <br></br>
+    <h4>Remember to please try the practice problems first before looking at the solutions.</h4>
+    </p>
+  </section>
+</body>
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+</html>

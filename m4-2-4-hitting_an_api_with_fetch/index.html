@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <p>Your solutions for problems will print in the Replit console.</p>
+  <p>Please open the console by clicking the wrench icon near the top-right corner of this browser.</p>
+  <script>
+    /*
+    PROBLEM 1:
+    Below, we are fetching Earth data from `planetURL`. You can see the data printing in the console.
+    Edit the success handler and add a new console log that prints:
+      "Earth is a planet 12756 Km in diameter, with a rotation period of 24 hours, which takes 365 days to go around the Sun".
+    But the string must be built using the data from the API, as opposed to simply copying and pasting the text above.
+    You can then try fetching different planets by editing the planet id at the end of the `planetURL`.
+    */
+    const planetURL = 'https://webapis.bloomtechdev.com/planets/3'
+    fetch(planetURL)
+      .then(res => {
+        return res.json()
+      })
+      .then(planet => {
+        console.log(planet)
+        // ENTER YOUR CODE HERE
+      })
+
+    /*
+    PROBLEM 2:
+    Use fetch to obtain the data from Mars from the `marsURL`.
+    On success, print to the console a message of your liking using the data from the API.
+    */
+    const marsURL = 'https://webapis.bloomtechdev.com/planets/4'
+    // ENTER YOUR CODE HERE
+
+    /*
+    PROBLEM 3:
+    Use fetch to obtain the data of all the planets using the `solarSystemURL`.
+    On success loop over the planets, at each planet printing "<name> is number <id>" using the data from the API.
+    */
+    const solarSystemURL = 'https://webapis.bloomtechdev.com/planets'
+    // ENTER YOUR CODE HERE
+
+  </script>
+  <section
+    style="border: 2px solid blue; border-radius: 5px; padding: 10px; box-shadow: 5px 3px 3px orange; margin-top: 20px;">
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+      <br></br>
+    <h4>Remember to please try the practice problems first before looking at the solutions.</h4>
+    </p>
+  </section>
+</body>
+
+</html>

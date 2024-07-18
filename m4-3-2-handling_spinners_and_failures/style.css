@@ -1,0 +1,35 @@
+#spinner {
+  max-width: 100px;
+  align-self: center;
+}
+
+#spinner img {
+  max-width: 100%;
+  animation: spin 4s linear infinite;
+}
+
+#data {
+  align-self: center;
+  font-weight: bold;
+}
+
+#error {
+  color: red;
+  font-weight: bold;
+  align-self: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}

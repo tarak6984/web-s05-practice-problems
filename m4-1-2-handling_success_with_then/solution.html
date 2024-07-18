@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <p>All your solutions for this set of practice problems will print in the Replit console.</p>
+  <p>Please open the console by clicking the wrench icon near the top-right corner of this browser.</p>
+  <script>
+    /*
+    DIRECTIONS: Below are solutions to all the practice problems for this learning objective.  You can try each solution by copying it into your "index.html" file and clicking "Run".
+    */
+    /*
+    PROBLEM 1:
+    The function greetAsync below takes a name (E.G. "Anne") and returns a promise which fulfills a greeting (E.G. "Hello, Anne!").
+    Invoke the function and handle success with `.then` by console logging the fulfilled value three times.
+    */
+    function greetAsync(name) {
+      // Do not worry about how this function works internally
+      return Promise.resolve(`Hello, ${name}!`)
+    }
+    // ENTER YOUR CODE HERE
+    greetAsync('Garfield').then(greet => {
+      console.log(greet)
+      console.log(greet)
+      console.log(greet)
+    })
+    /*
+    PROBLEM 2:
+    The function coinTossAsync below returns a promise which fulfills a random Boolean (either `true` or `false`).
+    Invoke the function and handle success by console logging "It's heads!" if the Boolean is `true` and "It's tails!" otherwise.
+    */
+    function coinTossAsync() {
+      // Do not worry about how this function works internally
+      return Promise.resolve(!!Math.floor(Math.random() * 2))
+    }
+    // ENTER YOUR CODE HERE
+    coinTossAsync().then(bool => {
+      console.log(`It's ${bool ? 'heads' : 'tails'}!`)
+    })
+    /*
+   PROBLEM 3:
+    The function getYearAsync below returns a promise that fulfills the current year as a string (E.G. 2023).
+    Invoke the function and handle success by console logging "The year is <year>!" (E.G. "The year is 2023.").
+    Also inside the success handler, calculate your age by substracting your year of birth from the current year, and log it out.
+   */
+    function getYearAsync() {
+      // Do not worry about how this function works internally
+      return Promise.resolve(new Date().getFullYear())
+    }
+    // ENTER YOUR CODE HERE
+    getYearAsync().then(year => {
+      console.log(`The year is ${year}.`)
+      console.log(`I am ${year - 1977} years old.`)
+    })
+
+  </script>
+  <section
+    style="border: 2px solid blue; border-radius: 5px; padding: 10px; box-shadow: 5px 3px 3px orange; margin-top: 20px;">
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+      <br></br>
+    <h4>Remember to please try the practice problems first before looking at the solutions.</h4>
+    </p>
+  </section>
+</body>
+
+</html>

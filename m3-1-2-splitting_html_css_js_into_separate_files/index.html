@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /*
+    ❗ PROBLEM 1
+    👉 Extract the CSS rules below to the `styles.css` stylesheet found in this project.
+    👉 After this is done, remove this <style> tag and link your `styles.css` using a <link> tag
+    */
+    section {
+      border: 2px solid blue;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 5px 3px 3px orange;
+      margin-top: 20px;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #logo {
+      padding: 1.5rem;
+      animation: spin 4s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <p>The problems involve extracting the CSS and the JavaScript out of the HTML and into dedicated files.</p>
+  <p>If they are solved correctly, the logo should render exactly the same way.</p>
+  <div id="logo"></div>
+  <script>
+    /*
+    ❗ PROBLEM 2
+    👉 Extract the JavaScript code below (do not worry about how it works) to the `index.js` file.
+    👉 After this is done, remove this <script> tag and link your `index.js` to the HTML using a <script> tag with a `src` atribute pointing to the file.
+    👉 Placement of the <script> tag is important. If the code affects the HTML, then the script must be placed **after** the elements the script cares about.
+    👉 An alternative to this is placing the <script> inside the <head>, but adding to the <script> a `defer` attribute.
+    */
+    const logoDiv = document.querySelector('#logo')
+    const logoImg = document.createElement('img')
+    logoDiv.appendChild(logoImg)
+    logoDiv.style.maxWidth = '100px'
+    logoImg.src = 'logo.png'
+    logoImg.style.width = '100%'
+
+  </script>
+  <section>
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: The solution is found inside `index (solution).html` but expects you to create valid `index.js` and
+      `styles.css` files at the root of this project, in order for it to work.
+    </p>
+  </section>
+</body>
+
+</html>

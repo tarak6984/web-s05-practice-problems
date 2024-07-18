@@ -1,0 +1,23 @@
+body {
+  padding: 0.5rem;
+}
+
+#planets {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#planets div {
+  border: 1px solid black;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+#planets div p {
+  line-height: 0.8rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}

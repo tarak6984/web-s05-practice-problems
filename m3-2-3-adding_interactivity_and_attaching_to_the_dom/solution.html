@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <p>Please open the console by clicking the wrench icon near the top-right corner of this browser.</p>
+  <p>The result of your code should render to the HTML</p>
+  <div id="result"></div>
+  <script>
+    /*
+    INSTRUCTIONS
+    👉 Check out the animated `day-and-night.png` file in this project. That is what we are building!
+    👉 The function `buildBulbWidget` needs to be completed so it returns the widget seen in the animation.
+    👉 The HTML structure of the widget produced by `buildBulbWidget` as the page loads should be as follows:
+
+    <div>
+      <div id="day">💡</div>
+      <div id="night" style="display: none;">🌌</div>
+      <button>Toggle</button>
+    </div>
+
+     👉 Complete the 5 problems (the first 4 involve completing `buildBulbWidget` and the last one appending the output to the DOM):
+    */
+    function buildBulbWidget() {
+      const container = document.createElement('div')
+      const day = document.createElement('div')
+      const night = document.createElement('div')
+      const button = document.createElement('button')
+      container.appendChild(day)
+      container.appendChild(night)
+      container.appendChild(button)
+      // ❗ PROBLEM 1: Give day and night their id attributes
+      day.id = 'day'
+      night.id = 'night'
+      // ❗ PROBLEM 2: Give day and night their text contents using emoji '💡' and '🌌' and the button a text of 'Toggle'
+      day.textContent = '💡'
+      night.textContent = '🌌'
+      button.textContent = 'Toggle'
+      // ❗ PROBLEM 3: Set the night to display none using an inline style
+      night.style.display = 'none'
+      // ❗ PROBLEM 4: Add an event listener to the button to toggle the style.display of day and night between 'none' and 'block'
+      button.addEventListener('click', evt => {
+        day.style.display = day.style.display == 'none' ? 'block' : 'none'
+        night.style.display = day.style.display == 'none' ? 'block' : 'none'
+      })
+      return container
+    }
+    // ❗ PROBLEM 5: Invoke the `buildBulbWidget` and append its return value to the div#result in the HTML
+    document.querySelector('#result').appendChild(buildBulbWidget())
+
+  </script>
+  <section>
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+      <br></br>
+    <h4>Remember to please try the practice problems first before looking at the solutions.</h4>
+    </p>
+  </section>
+</body>
+
+<head>
+  <style>
+    section {
+      border: 2px solid blue;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 5px 3px 3px orange;
+      margin-top: 20px;
+    }
+
+    #day,
+    #night {
+      font-size: 3.3em;
+    }
+  </style>
+</head>
+
+</html>

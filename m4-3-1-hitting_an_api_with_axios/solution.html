@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <p>Your solutions for problems will print in the Replit console.</p>
+  <p>Please open the console by clicking the wrench icon near the top-right corner of this browser.</p>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+  <script>
+    /*
+    DIRECTIONS: Below are solutions to all the practice problems for this learning objective. You can try each solution by copying it into your "index.html" file and clicking "Run".
+    */
+    /*
+    PROBLEM 1:
+    Below, we are fetching Venus data from `planetURL` using Axios.
+    Edit the success handler and console log the whole `response`. Can you find the data from the API?
+    Inside the success handler, use the data inside the response to print out the following string:
+      "Venus is a planet 12104 Km in diameter, with a rotation period of 243 hours.".
+    But the string must be built using the data from the API, as opposed to simply copying and pasting the text above.
+    You can then try fetching different planets by editing the planet id at the end of the `planetURL`.
+    */
+    const planetURL = 'https://webapis.bloomtechdev.com/planets/2'
+    axios.get(planetURL)
+      .then(response => {
+        // ENTER YOUR CODE HERE
+        console.log(response)
+        const { name, diameter, rotation_period } = response.data
+        console.log(`${name} is a planet ${diameter} Km in diameter, with a rotation period of ${rotation_period} hours.`)
+      })
+
+    /*
+    PROBLEM 2:
+    Use Axios to get information about Pluto from the `baseURL`. You will need to add the planet id at the end of `baseURL`!
+    On success, print to the console "I am not sure Pluto is a planet!" (obtaining the word "Pluto" from inside the response data).
+    */
+    const baseURL = 'https://webapis.bloomtechdev.com/planets/'
+    // ENTER YOUR CODE HERE
+    axios.get(baseURL + '9')
+      .then(response => {
+        console.log(`I am not sure ${response.data.name} is a planet!`)
+      })
+
+    /*
+    PROBLEM 3:
+    Use Axios to get information from the `badURL`. Because a planet with id `12345` does not exist, this request will reject.
+    Create a catch handler that takes `error` as its argument, and prints to the console "Sorry, planet with id 12345 does not exist".
+    Also inside the handler, print to the console the status code found inside `error.response`.
+    Also print to the console the contents of `error.response.data.message` (this is the actual error message from the server).
+    */
+    const badURL = 'https://webapis.bloomtechdev.com/planets/12345'
+    // ENTER YOUR CODE HERE
+    axios.get(badURL)
+      .catch(error => {
+        console.log("Sorry, planet with id 12345 does not exist")
+        console.log(error.response.status)
+        console.log(error.response.data.message)
+      })
+
+  </script>
+  <section
+    style="border: 2px solid blue; border-radius: 5px; padding: 10px; box-shadow: 5px 3px 3px orange; margin-top: 20px;">
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+      <br></br>
+    <h4>Remember to please try the practice problems first before looking at the solutions.</h4>
+    </p>
+  </section>
+</body>
+
+</html>
