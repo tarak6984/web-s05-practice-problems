@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<!--
+DIRECTIONS:
+
+You are the Quality Assurance department today!
+
+Open devtools using the little wrench, interact with each widget and make sure that all work as expected. The expected behavior for each is described in the HTML below.
+
+You don't need to write or understand any JavaScript on this page, and there is no solution file. You will learn how to write all the syntax inside the script tag in future lessons!
+-->
+
+<body>
+  <!-- Widget 1
+  Clicking on the button should increment the count!
+  -->
+  <section>
+    <p>Widget 1</p>
+    <button id="counterBtn">Click Me!</button>
+    <p id="countDisplay">0</p>
+  </section>
+  <!-- EVENT 2
+  Clicking on the button should toggle the text on and off!
+  -->
+  <section>
+    <p>Widget 2</p>
+    <button id="toggleBtn">Toggle</button>
+    <div id="toggleContent" style="display: none;">This content will toggle</div>
+  </section>
+  <!-- Widget 3
+  Clicking on the link should make an alert dialog pop up!
+  -->
+  <section>
+    <p>Widget 3</p>
+    <a href="#" id="alertLink">Click Me</a>
+  </section>
+  <!-- Widget 4
+  Clicking on submit should disable the submit button!
+  -->
+  <section>
+    <p>Widget 4</p>
+    <form id="myForm">
+      <input type="text" name="inputField" required>
+      <button type="submit" id="submitButton">Submit</button>
+    </form>
+  </section>
+  <!-- Widget 5
+  Addition and subtraction should work correctly!
+  -->
+  <section>
+    <p>Widget 5</p>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <button id="addBtn">Add</button>
+    <button id="subtractBtn">Subtract</button>
+    <p id="result">Result: </p>
+  </section>
+  <script>
+    /*
+    Widget 1: Create a counter button
+    */
+    let count = 0;
+    const counterBtn = document.getElementById('counterBtn');
+    const countDisplay = document.getElementById('countDisplay');
+
+    counterBtn.addEventListener('click', function () {
+      count++;
+      countDisplay.textContent = count;
+    });
+
+    /*
+    Widget 2: Create a toggle button
+    */
+    const toggleBtn = document.getElementById('toggleBtn');
+    const toggleContent = document.getElementById('toggleContent');
+
+    toggleBtn.addEventListener('click', function () {
+      if (toggleContent.style.display === 'none') {
+        toggleContent.style.display = 'block';
+      } else {
+        toggleContent.style.display = 'none';
+      }
+    });
+
+    /*
+    Widget 3: Display alert message on link click alertLink
+    */
+    const alertLink = document.getElementById('alertLink');
+
+    alertLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      alert('Link clicked!');
+    });
+
+    /*
+    Widget 4: Disable submit button after form is submitted once
+    */
+    const myForm = document.getElementById('myForm');
+
+    myForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+    });
+
+    const submitButton = document.getElementById('submitButton');
+    submitButton.addEventListener('click', function () {
+      submitButton.disabled = true;
+    });
+
+    /*
+    Widget 5: The following code represents a simple calculator that performs addition and subtraction.
+    */
+    const num1 = document.getElementById('num1');
+    const num2 = document.getElementById('num2');
+    const addBtn = document.getElementById('addBtn');
+    const subtractBtn = document.getElementById('subtractBtn');
+    const result = document.getElementById('result');
+
+    addBtn.addEventListener('click', function () {
+      // num1 and num2 are text type and num2.value needs to be added
+      const sum = parseInt(num1.value) + parseInt(num2.value);
+      result.textContent = 'Result: ' + sum;
+    });
+
+    subtractBtn.addEventListener('click', function () {
+      // num1 and num2 are text type we need to convert it into number type
+      const difference = parseInt(num1.value) - parseInt(num2.value);
+      result.textContent = 'Result: ' + difference;
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <div id="div-element"></div>
+  <div id="link-element"></div>
+
+  <script>
+    /*
+  DIRECTIONS: Below are solutions to all the practice problems for this learning objective.  You can try each solution by copying it into your "index.html" file and clicking "Run".
+  */
+
+    /*
+  PROBLEM 1: Write a code snippet that sets the attribute 'src' on the imageElement below to this placeholder image link: https://place-hold.it/400x400.
+  */
+    let imageElement = document.createElement("img");
+    // ENTER YOUR CODE HERE
+
+    imageElement.setAttribute("src", "https://place-hold.it/400x400");
+
+    /*
+  PROBLEM 2: Write a code snippet that sets the attribute 'href' on the element with an ID of 'link-element' to this mock URL address: http://www.example.com.
+  */
+    // ENTER YOUR CODE HERE
+    let linkElement = document.getElementById("link-element");
+    linkElement.setAttribute("href", "http://www.example.com");
+
+    /*
+  PROBLEM 3: Write a code snippet that sets the attribute 'role' of the element with an ID of 'div-element' to 'button'.
+  */
+    // ENTER YOUR CODE HERE
+    let divElement = document.getElementById("div-element");
+    divElement.setAttribute("role", "button");
+    // The 'role' attribute is used by some programs and browsers that offer features like screen readers
+
+    /*
+  PROBLEM 4: Write a code snippet that sets the 'src' attribute on an element called "newImageElement" using the 'attrName' pattern instead of the setAttribute method. You will need to create "newImageElement" first using the createElement() method.
+  */
+    // ENTER YOUR CODE HERE
+    let newImageElement = document.createElement("img");
+    newImageElement.src = "http://www.imagsource.com/image.jpg";
+
+    /*
+  PROBLEM 5 (DEBUGGING): There is an error in this code snippet. Find and fix it.
+  */
+    // let newDivElement = document.createElement('div');
+    // newDivElement.setAttribute('style', 'width: 50px');
+
+    // Solution
+    // The bug in this code is that the setAttribute() method does not accept a "style" argument with the value of "width: 50px".The correct syntax would be to use the "style" parameter and set the width of the div element as follows:
+    let newDivElement = document.createElement("div");
+    newDivElement.style.width = "50px";
+  </script>
+</body>
+
+</html>

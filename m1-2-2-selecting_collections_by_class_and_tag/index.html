@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <h3>Hello there!</h3>
+  <p>All your solutions for this set of practice problems are located in the Replit console. Please open the console by
+    clicking the wrench icon near the top-right corner of this browser.
+  </p>
+
+  <section
+    style="border: 2px solid blue; border-radius: 5px; padding: 10px; box-shadow: 5px 3px 3px orange; margin-top: 20px;">
+    <h3 class="section-header">Using DOM Selectors</h3>
+    <p>The <code>document</code> object has built-in methods for accessing specific elements in the DOM</p>
+    <p>Some of these methdods are:</p>
+    <ul>
+      <li><code>getElement</code> Methods</li>
+      <li><code>querySelector</code> Methods</li>
+    </ul>
+    <p>The following practice problems require some understanding of some of the above listed methods. You can reference
+      MDN's documentation to learn more about their syntax and usage</p>
+    <p class="good-luck-text">Good luck!</p>
+
+  </section>
+  <script>
+    /*
+    PROBLEM 1: Print a list of all <h3> elements in the webpage. Use getElementsByTagName on the document object to retrieve all the h3's.
+    */
+    //ENTER YOUR CODE HERE
+
+    /*
+    PROBLEM 2: Print only the first <p> element in the webpage to the console.
+    */
+    //ENTER YOUR CODE HERE
+
+    /*
+    PROBLEM 3: Print all the section headers (class = "section-header") in the web page to the console.
+    */
+    //ENTER YOUR CODE HERE
+
+    /*
+    PROBLEM 4: Print all the elements that contains the text "Good luck!".
+    Hint: You can search for the text "Good luck!" in the html document using cmd/ctrl + F. Use your findings to decide the best way to select all relevant elements
+    */
+    //ENTER YOUR CODE HERE
+
+    /*
+    PROBLEM 5 (DEBUGGING): There is a typo in the main header, h1 of our webpage. The code below was written in order to correct the typo. Fix the issue(s) with the code so it works as expected.
+    */
+    const header = document.getElementsByTagName("h1");
+    header.innerText = 'Practice Problems Webpage';
+
+  </script>
+  <section
+    style="border: 2px solid blue; border-radius: 5px; padding: 10px; box-shadow: 5px 3px 3px orange; margin-top: 20px;">
+    <h3 class="section-header">About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+      <br></br>
+    <h4>Remember to please try the
+      practice problems first before looking at the solutions.</h4>
+    <h4 class="good-luck-text">Good luck!</h4>
+    </p>
+  </section>
+</body>
+
+</html>

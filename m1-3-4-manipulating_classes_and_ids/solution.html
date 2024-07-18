@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1 id="myh1" class="myHeadings">Practice Problems Webpage</h1>
+  <p id="myPara">All your solutions for this set of practice problems are located in the Replit console. Please open the
+    console by clicking the wrench icon near the top-right corner of this browser.
+  </p>
+  <script>
+    /*
+  PROBLEM 1: Create and use a variable named myElement1 and get the element with the id "myh1". Console log myElement1's class name and id.
+
+    */
+
+    const myElement1 = document.getElementById("myh1");
+    console.log(myElement1.className);
+    console.log(myElement1.id);
+
+
+    /*
+    PROBLEM 2: Create another variable named myElement2 and get the id "myPara". Add "class1" and "class2: to myElement2's using classList and console log the result.
+    */
+
+    const myElement2 = document.getElementById("myPara");
+    myElement2.classList.add("class1", "class2");
+    console.log(myElement2.className);
+    myElement2.classList.remove("class1"); // Remove a class
+
+    /*
+   PROBLEM 3: Use classList to remove class1 from myElement2 and console log the resulting class names.
+   */
+
+    myElement2.classList.remove("class1");
+    console.log(myElement2.className);
+
+    /*
+    PROBLEM 4: Using myElement2, If class1 exists, remove it; otherwise, add it using appropriate classList method.
+    */
+
+    myElement2.classList.toggle("class1");
+
+    /*
+    PROBLEM 5 (DEBUGGING): Check if class1 in in using classList using appropriate method and in an if statement, console.log if class1 exists or not. Experiment and run the code more than once to test.
+
+  */
+
+    if (myElement2.classList.contains("class1")) {
+      console.log("Class1 exists");
+    } else {
+      console.log("Class1 does not exist");
+    }
+
+  </script>
+  <section>
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+    </p>
+    <h4>Remember to please try the
+      practice problems first </br> before looking at the solutions.</h4>
+
+  </section>
+</body>
+
+</html>

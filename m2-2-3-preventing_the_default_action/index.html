@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <a href="https://bloomtech.com" target="_blank">Bloomtech Home Page</a>
+  <button>CLICK!</button>
+  <p>
+    All your solutions for this set of practice problems are located in the
+    Replit console. Please open the console by clicking the wrench icon near
+    the top-right corner of this browser.
+  </p>
+  <script>
+    /*
+      PROBLEM 1: How would you prevent the user from copying text from the document?
+      */
+    //ENTER YOUR CODE HERE
+    /*
+      PROBLEM 2: How to go one step ahead and also prevent the user from cutting text?
+      */
+    //ENTER YOUR CODE HERE
+
+    /*
+      PROBLEM 3: The link on the page redirects the user to bloomtech.com
+      How would you change its behavior by adding a malicious code that sends the user to hacked.com ?
+        */
+
+    //ENTER YOUR CODE HERE
+
+    /*
+      PROBLEM 4: How can you prevent the default behavior of a the page's link ONLY if it belongs to the class '.prevent' ?
+      */
+
+    //ENTER YOUR CODE HERE
+
+    /*
+      PROBLEM 5 (DEBUGGING):  The code below is not preventing the default action for the button. Why? Can you fix it?
+*/
+    const handler1 = () => {
+      window.alert("Click!");
+    };
+    const handler2 = (event) => {
+      event.preventDefault();
+    };
+    document.querySelector("button").addEventListener("click", handler1);
+    document.querySelector("button").addEventListener("click", handler2);
+  </script>
+  <section style="
+        border: 2px solid blue;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 5px 3px 3px orange;
+        margin-top: 20px;
+      ">
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click
+      the "index (solution).html" file on the left-hand side of the Replit
+      website, under "Files". You can try each solution by copying it into
+      your "index.html" file and clicking "Run".
+    </p>
+    <h4>
+      Remember to please try the practice problems first before looking at the
+      solutions.
+    </h4>
+  </section>
+</body>
+
+</html>

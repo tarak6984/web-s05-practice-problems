@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <script>
+    /*
+    PROBLEM 1: Create a new paragraph element and add the text "My favorite number is (your favorite number)" to it. Append the paragraph element to the body of the document.
+    */
+    const paragraph = document.createElement("p");
+    paragraph.textContent = "My favorite number is 7"; // Replace 7 with your favorite number
+    document.body.appendChild(paragraph);
+    /*
+    PROBLEM 2: Create a new heading element with the text "Process has ended here." Prepend the heading element to the body of the document.
+    */
+
+    const heading = document.createElement("h2");
+    heading.textContent = "Process has ended here.";
+    document.body.prepend(heading);
+
+    /*
+  PROBLEM 3: Create a new paragraph element with the text "Here we go, I am playing with the DOM!" and append it to the document's body. Create two more paragraph elements with identical text, append them to the body, and choose different colors for each paragraph.
+  */
+    const redParagraph = document.createElement("p");
+    redParagraph.textContent = "Here we go, I am playing with the DOM!";
+    redParagraph.style.color = "red";
+    document.body.appendChild(redParagraph);
+
+    /*
+  PROBLEM 4: Create two new paragraph elements with the text "Duck" and one with "Goose". Append these elements to the body of the document.
+  */
+    const duck1 = document.createElement("p");
+    duck1.textContent = "Duck";
+    document.body.appendChild(duck1);
+
+    const duck2 = document.createElement("p");
+    duck2.textContent = "Duck";
+    document.body.appendChild(duck2);
+
+    const goose = document.createElement("p");
+    goose.textContent = "Goose";
+    document.body.appendChild(goose);
+
+    /*
+  PROBLEM 5 (DEBUGGING): The following code has some errors. Fix the code to create a new paragraph element with the text "Hello" and prepend it to the document's body. Then create a new paragraph element with the text "World" and append it to the document's body.
+  */
+
+    // Fix the code below
+    const element1 = document.createElement("p");
+    element1.textContent = "Hello";
+    document.body.prepend(element1); // it should be prepend and NOT prependChild
+
+    const element2 = document.createElement("p"); // it should be createElement and NOT createelement
+    element2.textContent = "World";
+    document.body.appendChild(element2);
+  </script>
+  <section style="
+        border: 2px solid blue;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 5px 3px 3px orange;
+        margin-top: 20px;
+      ">
+    <h3>About The Solutions</h3>
+    <p>This is just some text to display on the page! :))</p>
+  </section>
+</body>
+
+</html>

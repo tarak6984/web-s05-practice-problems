@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1 id="myHeader"></h1>
+  <div id="container"></div>
+  <uo id="list" style="list-style-type: none; display: none;">
+    <li id="listItem">One</li>
+    <li>Two</li>
+    <li>Three</li>
+  </uo>
+  <div id="myFirstElement"></div>
+
+  <script>
+    /*
+    DIRECTIONS: Below are solutions to all the practice problems for this learning objective.  You can try each solution by copying it into your "index.html" file and clicking "Run".
+    */
+
+    /*
+  PROBLEM 1: Write code to select an HTML element with an ID of "myHeader" using document.getElementById().
+  */
+    // ENTER YOUR CODE HERE
+    document.getElementById('myHeader');
+
+    /*
+    PROBLEM 2: Write a code snippet for selecting an HTML element with the ID of "container" and store it in a "let" variable named "container".
+    */
+    // ENTER YOUR CODE HERE
+    let container = document.getElementById('container');
+
+    /*
+    PROBLEM 3: Write a code snippet for selecting a document node with the ID of "listItem", store it in a "let" variable named "listItem", then log it to the console.
+    */
+    // ENTER YOUR CODE HERE
+    let listItem = document.getElementById('listItem');
+    console.log(listItem);
+
+    /*
+    PROBLEM 4: Write a code snippet for selecting all child elements of the element with an ID of "list" and store it in a "let" variable named "listElements"
+    */
+    // ENTER YOUR CODE HERE
+    let listElements = document.getElementById('list').children;
+
+    /*
+    PROBLEM 5 (DEBUGGING): There is an error in this code snippet. Find and fix it.
+    */
+    // ENTER YOUR CODE HERE
+    let myFirstElement = document.getElementById('myFirstElement'); // Changed "ID" to "Id"
+
+  </script>
+
+</body>
+
+</html>

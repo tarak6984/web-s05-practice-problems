@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="F">
+
+<body class="E">
+  <h1>Practice Problems Webpage</h1>
+  <p>All your solutions for this set of practice problems are located in the Replit console. Please open the console by
+    clicking the wrench icon near the top-right corner of this browser.
+  </p>
+  <section class="D">
+    <div class="C">
+      <div class="B">
+        <button class="A" style="font-size:1.5em;">Click Me!</button>
+      </div>
+    </div>
+  </section>
+  <script>
+    /*
+    DIRECTIONS: Below are solutions to all the practice problems for this learning objective.  You can try each solution by copying it into your "index.html" file and clicking "Run".
+    */
+    /*
+    PROBLEM 1:
+    In the following code, we are selecting all the elements above this script tag, and adding a click event listener to each.
+    👉 Inside the event listener, study the event object with a console log. Find the `currentTarget` property of the event object.
+    👉 Extract the `className` and the `nodeName` properties from the `currentTarget` and store them into variables.
+    👉 Create a log statement that will print something like "The <className> element is a <nodeName>", using your variables to construct the string.
+    👉 Click the button, and observe in the console the firing of the listeners, as the event bubbles up the DOM!
+    👉 Note how the listener attached to the target fires first.
+    */
+    let elements = Array.from(document.getElementsByTagName('*'))
+    elements.forEach(element => {
+      element.addEventListener('click', event => {
+        // PROBLEM 1
+        const { className, nodeName } = event.currentTarget
+        console.log(`The ${className} element is a ${nodeName}`)
+        if (event.currentTarget === document.querySelector('section')) { // PROBLEM 3
+          console.log('\tI love this section!')
+        }
+      }, { capture: true }) // PROBLEM 2
+    })
+
+    /*
+    PROBLEM 2:
+    It's possible to set up a click listener so that it executes as the event dives towards the target of the event.
+    👉 Note that in `addEventListener` above, the first argument is the string 'click' and the second argument is a function.
+    👉 Add a third argument which is an object like so: { capture: true }. This object allows to pass options into `addEventListener`
+    👉 Click the button, and observe in the console how the order of execution of the listeners reverses itself, with the target firing last.
+    */
+
+    /*
+    PROBLEM 3:
+    Sometimes you need to know if the event is currently firing on one element or another, to take different actions.
+    👉 Inside the click event listener above add code so that if the current target is equal to the section element, console log "I love this section!".
+    👉 In order to compare event.currentTarget to the section, you'll need to grab the section element using querySelector.
+    */
+
+  </script>
+  <section
+    style="border: 2px solid blue; border-radius: 5px; padding: 10px; box-shadow: 5px 3px 3px orange; margin-top: 20px;">
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+      <br></br>
+    <h4>Remember to please try the
+      practice problems first before looking at the solutions.</h4>
+    </p>
+  </section>
+</body>
+
+</html>

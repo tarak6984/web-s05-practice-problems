@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    section {
+      border: 2px solid blue;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 5px 3px 3px orange;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 10px;
+      color: antiquewhite;
+      background-color: rgb(58, 49, 36);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Solutions Webpage</h1>
+  <p>All your solutions for this set of practice problems are located in the Replit console. Please open the console by
+    clicking the wrench icon near the top-right corner of this browser.
+  </p>
+  <section class="recap">
+    <h3>Recap</h3>
+    <ol>
+      <li>
+        Create new HTML elements using <code>.createElement()</code>
+      </li>
+      <li>
+        Add elements to the DOM using <code>.appendChild()</code> and <code>.prepend()</code>
+      </li>
+    </ol>
+    <p>
+      You can refer to previous lessons if you need a refresher on these topics.
+    </p>
+  </section>
+
+  <section>
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+    </p>
+    <br></br>
+    <h4>Remember to please try the
+      practice problems first before looking at the solutions.</h4>
+  </section>
+
+  <script>
+    /*
+    DIRECTIONS: Use the insertAdjacentElement() method for the tasks described below. Make all adjustments to the "recap" section.
+    */
+
+    /*
+    PROBLEM 1: In the "recap" section, insert a p element with the text "List begins here" after the header and before the list items
+    */
+    const orderedList = document.querySelector('ol');
+    const p1 = document.createElement('p');
+    p1.textContent = "List begins here";
+    orderedList.insertAdjacentElement('beforebegin', p1);
+
+    /*
+    PROBLEM 2: Add a list item to the existing ordered list containing a coding concept you have recently learned to the first position
+    */
+    const topic = document.createElement('li');
+    topic.textContent = "Topic title";
+    orderedList.insertAdjacentElement('afterbegin', topic);
+
+    /*
+   PROBLEM 3: Add another list item to the ordered list containing another coding topic you have recently learned to the last position
+   */
+    const topic2 = document.createElement('li');
+    topic2.textContent = "Topic title";
+    orderedList.insertAdjacentElement('beforeend', topic2);
+
+    /*
+    PROBLEM 4: After the list items but before the p element, add a button with the text "Done"
+    */
+    const button = document.createElement('button');
+    button.innerText = "Done";
+    orderedList.insertAdjacentElement('afterend', button);
+
+    /*
+    PROBLEM 5 (DEBUGGING): The code below is an attempt at adding buttons at the beginning and end positions of the parent element div and then inserting into the DOM.
+    Fix the issue(s) with the code.
+    */
+    const section = document.querySelector('.recap');     // use correct selector
+    const parentElement = document.createElement('div');
+    const btn = document.createElement('button');
+    btn.innerHTML = 'click me';
+    btn.classList.add('btn');
+
+    // Create a second button element. Otherwise all but the last insert attempt will be ignored.
+    const btn2 = document.createElement('button');
+    btn2.innerHTML = 'click me';
+    btn2.classList.add('btn');
+    // NB: The buttons need to be inserted inside parent element - beforebegin and afterend will not work as parent element is not in a tree (does not have a parent).
+    parentElement.insertAdjacentElement('afterbegin', btn);  // use afterbegin to insert in first position inside parent
+    parentElement.insertAdjacentElement('beforeend', btn2);  // use beforeend to insert in last position
+    section.insertAdjacentElement('beforebegin', parentElement);  // 'beforebegin'
+  </script>
+</body>
+
+</html>

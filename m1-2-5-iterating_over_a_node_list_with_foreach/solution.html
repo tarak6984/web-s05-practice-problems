@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <p>All your solutions for this set of practice problems are located in the Replit console. Please open the console by
+    clicking the wrench icon near the top-right corner of this browser.
+  </p>
+  <section
+    style="border: 2px solid blue; border-radius: 5px; padding: 10px; box-shadow: 5px 3px 3px orange; margin-top: 20px;">
+    <h3>About The Solutions</h3>
+    <p>PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+    </p>
+    <br></br>
+    <h4>Remember to please try the
+      practice problems first before looking at the solutions.</h4>
+  </section>
+  <section
+    style="border: 2px solid blue; border-radius: 5px; padding: 10px; box-shadow: 5px 3px 3px orange; margin-top: 20px;"
+    class="extra">
+    <h3>Placeholder text</h3>
+    <p>You shouldn't try to read this unless you understand Latin</p>
+    <p>Hoc non legere debes nisi latine intellegas</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, natus quisquam. Molestiae accusamus nisi in
+      totam. Molestias commodi quaerat eos temporibus, dolorem soluta, rerum, nesciunt minus eveniet expedita
+      reiciendis! Quod.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, ex eum maxime aspernatur voluptatum est,
+      molestiae amet alias soluta sapiente cumque accusamus non nam quod, nostrum reiciendis quos blanditiis id?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat minima aperiam iste placeat ipsa quae
+      voluptatibus laudantium quas vero culpa doloremque deleniti animi expedita corporis temporibus, minus ea. Maxime,
+      itaque.</p>
+    <p>If you were wondering, this is NOT a magic spell.</p>
+    <p>Lorem ipsum is the ultimate placeholder text</p>
+    <p>The lorem ipsum gets its name from the Latin phrase Neque porro quisquam est qui dolorem ipsum quia dolor sit
+      amet. which translates to “Nor is there anyone who loves or pursues or desires to obtain pain of itself, because
+      it is pain.”</p>
+  </section>
+
+  <script>
+    /*
+    DIRECTIONS: Below are solutions to all the practice problems for this learning objective.  You can try each solution by copying it into your "index.html" file and clicking "Run".
+    */
+
+    /*
+    PROBLEM 1: Create a variable "headerElements" containing all h3 elements in the web page. Loop over headerElements using the forEach() method and log each element's text content.
+    HINT: Use the innerText property to get the text content
+    */
+    const headerElements = document.querySelectorAll('h3')
+    headerElements.forEach((element) => {
+      console.log(element.innerText)
+    });
+
+    /*
+    PROBLEM 2: Use the forEach() method to print all but the second h3 element in headerElements.
+    */
+    headerElements.forEach((element, index) => {
+      if (index === 1) return
+      console.log(element)
+    })
+
+    /*
+    PROBLEM 3: Create an array of the text content of all h3 elements (Use the forEach() method). Log the created array to the console.
+    */
+    const headerElementsArray = []
+    headerElements.forEach((element) => {
+      headerElementsArray.push(element.textContent)
+    })
+    console.log(headerElementsArray)
+
+    /*
+    PROBLEM 4: Using the forEach() method, print to the console the first 10 characters of the text content for all p elements. Include each p element's respective index before the characters ('p{{index}} {{First 10 characters}}'). For example 'p0 All your s'
+    */
+    const pElements = document.querySelectorAll('p')
+    pElements.forEach((element, index) => {
+      console.log(`p${index} ${element.textContent.slice(0, 10)}`)
+    })
+
+    /*
+    PROBLEM 5 (DEBUGGING): The code below is an attempt at adding an emoji from the list of emojis to the end of each page section. Fix the issue(s) with the code.
+    */
+    // function to create p element
+    const createEmojiElement = (index, emojiList) => {
+      const emojiElement = document.createElement('p');
+      emojiElement.style.margin = '10px 0'
+      emojiElement.innerText = emojiList[index]
+      return emojiElement
+    }
+
+    // list of emojis to add to page
+    const emojiList = ['😂', '😭'];
+
+    const pageSections = document.querySelectorAll('section');
+    pageSections.forEach((section, index) => {      // get the index of each section
+      section.appendChild(createEmojiElement(index, emojiList))             // call the createEmojiElement with arguments
+    })
+
+  </script>
+</body>
+
+</html>

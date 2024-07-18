@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <div id="parent"></div>
+  <script>
+    /*
+    DIRECTIONS: Below are solutions to all the practice problems for this learning objective.  You can try each solution by copying it into your "index.html" file and clicking "Run".
+    */
+
+    /*
+    PROBLEM 1: Write a code snippet that appends the childElement below to the parentElement. You can assume that the parentElement already exists.
+    */
+    let parentElement = document.getElementById('parent');
+    let childElement = document.createElement('div');
+    // ENTER YOUR CODE HERE
+    parentElement.appendChild(childElement);
+
+    /*
+    PROBLEM 2: Write a code snippet that prepends the childElement2 to parentElement2.
+    */
+    let parentElement2 = document.getElementById('parent');
+    let childElement2 = document.createElement('div');
+    // ENTER YOUR CODE HERE
+    parentElement2.prepend(childElement2);
+
+    /*
+    PROBLEM 3: Write a code snippet that appends multiple child elements (childElement3a, childElement3b, and childElement3c) to the parentElement3.
+    */
+    let parentElement3 = document.getElementById('parent');
+    let childElement3a = document.createElement('div');
+    let childElement3b = document.createElement('div');
+    let childElement3c = document.createElement('div');
+    // ENTER YOUR CODE HERE
+    parentElement3.appendChild(childElement3a);
+    parentElement3.appendChild(childElement3b);
+    parentElement3.appendChild(childElement3c);
+
+    /*
+    PROBLEM 4: Write a code snippet that inserts the childElement4 as the second child of the parentElement4. Assume that parentElement4 already has at least one child.
+    */
+    let parentElement4 = document.getElementById('parent');
+    let childElement4 = document.createElement('div');
+    // ENTER YOUR CODE HERE
+    let firstChild = parentElement4.firstChild;
+    parentElement4.insertBefore(childElement4, firstChild.nextSibling);
+
+    /*
+      PROBLEM 5 (Debugging): Find and fix the error in the code snippet below. The goal is to place childElement5 at the beginning of parentElement5.
+      */
+    let parentElement5 = document.getElementById('parent');
+    let childElement5 = document.createElement('div');
+    // Bug - Incorrect method: Using "appendChild" instead of "prepend"
+    // parentElement5.appendChild(childElement5);
+    // Solution - Use "prepend" to add the child element at the beginning
+    parentElement5.prepend(childElement5);
+
+  </script>
+
+</body>
+
+</html>

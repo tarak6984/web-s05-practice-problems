@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    /*
+    DIRECTIONS: Below are solutions to all the practice problems for this learning objective.  You can try each solution by copying it into your "index.html" file and clicking "Run".
+    */
+    /*
+    Problem 1: Add the parameter to the function (any name would work) and log it.
+    */
+    const handleEvent = () => {
+
+    };
+
+    /*
+    Problem 2: Change the action to log the event.key and assign the handler to the document:
+    */
+    const handleEvent2 = (event) => {
+      console.log('pressed a key');
+    };
+
+    /*
+    Problem 3: Change 'click' to 'dblclick', and update the message!
+    */
+    const handler = () => {
+      console.log("click!");
+    };
+    document.addEventListener("click", handler);
+
+    /*
+    Problem 4: "event.name" is not a property. Change it to "event.type".
+    */
+    const Logger = (e) => {
+      console.log(e.name);
+    };
+    document.addEventListener("click", Logger);
+  </script>
+</body>
+
+</html>

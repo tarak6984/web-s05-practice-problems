@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <p>All your solutions for this set of practice problems are located in the Replit console. Please open the console by
+    clicking the wrench icon near the top-right corner of this browser.
+  </p>
+  <script>
+    /*
+    PROBLEM 1:
+    Create a button that displays an alert message saying "Button clicked!" when the button is clicked.
+    */
+    const button = document.createElement('button');
+    button.textContent = 'Click Me!';
+    button.addEventListener('click', function () {
+      alert('Button clicked!');
+    });
+    const body = document.querySelector('body');
+    body.appendChild(button);
+
+    /*
+    PROBLEM 2:
+    Create a text input field and a button. When the button is clicked, retrieve the value entered in the input field and display it in the console using the addEventListener method.
+    */
+    // Function to handle the button click event
+    function handleClick() {
+      const inputField = document.getElementById('inputField');
+      const inputValue = inputField.value;
+      console.log("Input value: " + inputValue);
+    }
+
+    // Create the input field element
+    const inputField = document.createElement('input');
+    inputField.type = 'text';
+    inputField.id = 'inputField';
+    inputField.placeholder = 'Enter text';
+
+    // Create the button element
+    const submitButton = document.createElement('button');
+    submitButton.id = 'submitButton';
+    submitButton.textContent = 'Submit';
+
+    // Add a click event listener to the button
+    submitButton.addEventListener('click', handleClick);
+
+    // Append the input field and button to the body
+    document.body.appendChild(inputField);
+    document.body.appendChild(submitButton);
+
+    /*
+    PROBLEM 3:
+    Create an image. When the image is clicked, change its source to a different image using the addEventListener method. Append the image to the body.
+     */
+    function handleImageClick() {
+      // Get the image element using its ID
+      const image = document.getElementById('myImage');
+
+      // Change the image source to a different image
+      image.src = 'https://picsum.photos/id/237/200/300';
+    }
+
+    // Create the image element
+    const image = document.createElement('img');
+    image.id = 'myImage';
+    image.src = 'https://picsum.photos/id/236/200/300';
+
+    // Add a click event listener to the image
+    image.addEventListener('click', handleImageClick);
+
+    // Append the image to the body
+    document.body.appendChild(image);
+
+    /*
+    PROBLEM 4 (DEBUGGING):
+    // The code below needs to add the highlight class to the paragraph
+    // element above, fix the code below so the webpage works correctly.
+    */
+    const paragraph = document.getElementById("myParagraph");
+    paragrapha.addEventListener("mouseover", function () {
+      paragraph.add("highlight");
+    });
+    paragraph.addEventListener("mouseout", function () {
+      paragraph.classList.delete("highlight");
+    });
+
+  </script>
+  <section
+    style="border: 2px solid blue; border-radius: 5px; padding: 10px; box-shadow: 5px 3px 3px orange; margin-top: 20px;">
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+      <br></br>
+    <h4>Remember to please try the
+      practice problems first before looking at the solutions.</h4>
+    </p>
+  </section>
+</body>
+
+</html>

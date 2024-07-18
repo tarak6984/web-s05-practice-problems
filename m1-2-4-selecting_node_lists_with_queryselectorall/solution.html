@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <p class="custom-style">
+    All your solutions for this set of practice problems are located in the
+    Replit console. Please open the console by clicking the wrench icon near
+    the top-right corner of this browser.
+  </p>
+  <section style="
+        border: 2px solid blue;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 5px 3px 3px orange;
+        margin-top: 20px;
+      ">
+    <h3>About The Solutions</h3>
+    <p class="custom-style">
+      PLEASE READ: To access the solutions to these practice problems, click
+      the "index (solution).html" file on the left-hand side of the Replit
+      website, under "Files". You can try each solution by copying it into
+      your "index.html" file and clicking "Run".
+    </p>
+    <h4>
+      Remember to please try the practice problems first before looking at the
+      solutions.
+    </h4>
+  </section>
+  <script>
+    /*
+  DIRECTIONS: Below are solutions to all the practice problems for this learning objective.
+  You can try each solution by copying it into your "index.html" file and clicking "Run".
+  */
+
+    /*
+  PROBLEM 1:
+  Select and log to the console all paragraph elements on the page using querySelectorAll.
+  */
+    console.log("----------PROBLEM 1---------");
+    const paragraphTags = document.querySelectorAll("p");
+    console.log(paragraphTags);
+    /*
+  PROBLEM 2:
+  Select and log to the console the first element with the class "custom-style" using querySelectorAll.
+  */
+    console.log("----------PROBLEM 2---------");
+    const firstCustomStyle = document.querySelector(".custom-style");
+    console.log(firstCustomStyle);
+    /*
+  PROBLEM 3:
+  Select and log to the console all elements with the class "custom-style" using querySelectorAll.
+  */
+    console.log("----------PROBLEM 3---------");
+    const allCustomStyles = document.querySelectorAll(".custom-style");
+    console.log(allCustomStyles);
+    /*
+  PROBLEM 4:
+  Convert an array-like object into an array using the Array.from() method.
+  */
+    console.log("----------PROBLEM 4---------");
+    const arrayLikeObject = document.querySelectorAll(".custom-style");
+    const array = Array.from(arrayLikeObject);
+    console.log(array);
+
+    /*
+  PROBLEM 5 (DEBUGGING):
+  The following snippet throws this error `Uncaught TypeError: document.queryselectorAll is not a function` .
+  Fix the error so that it prints all the paragraphs in the page as an array of `NodeList`.
+  */
+    console.log("----------PROBLEM 5---------");
+    let paragraphs = document.querySelectorAll("p"); // fixed the typo and capilized the S in Selector
+    console.log(paragraphs);
+  </script>
+</body>
+
+</html>

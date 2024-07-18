@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    section {
+      border: 2px solid blue;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 5px 3px 3px orange;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 10px;
+      color: antiquewhite;
+      background-color: rgb(58, 49, 36);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Practice Problems Webpage</h1>
+  <p>All your problems are located within the script tags in the index.html file. You should only need to write
+    JavaScript code unless otherwise stated.
+  </p>
+
+  <section class="recap">
+    <h3>Recap</h3>
+    <ol>
+      <li>
+        Create new HTML elements using <code>.createElement()</code>
+      </li>
+      <li>
+        Add elements to the DOM using <code>.appendChild()</code> and <code>.prepend()</code>
+      </li>
+    </ol>
+    <p>
+      You can refer to previous lessons if you need a refresher on these topics.
+    </p>
+  </section>
+
+  <section>
+    <h3>About The Solutions</h3>
+    <p>
+      PLEASE READ: To access the solutions to these practice problems, click the "index (solution).html" file on the
+      left-hand side of the Replit website, under "Files". You can try each solution by copying it into your
+      "index.html" file and clicking "Run".
+    </p>
+    <h4>Remember to please try the
+      practice problems first before looking at the solutions.</h4>
+  </section>
+
+  <script>
+    /*
+    /*
+    DIRECTIONS: Use the insertAdjacentElement() method for the tasks described below. Make all adjustments to the "recap" section.
+    */
+
+    /*
+    PROBLEM 1: In the "recap" section, insert a p element with the text "List begins here" after the header and before the list items
+    */
+    //ENTER YOUR CODE HERE
+
+    /*
+    PROBLEM 2: Add a list item to the existing ordered list containing a coding concept you have recently learned to the first position
+    */
+    //ENTER YOUR CODE HERE
+
+    /*
+   PROBLEM 3: Add another list item to the ordered list containing another coding topic you have recently learned to the last position
+   */
+    //ENTER YOUR CODE HERE
+
+    /*
+    PROBLEM 4: After the list items but before the p element, add a button with the text "Done"
+    */
+    //ENTER YOUR CODE HERE
+
+    /*
+    PROBLEM 5 (DEBUGGING): The code below attempts to add buttons at the beginning and end positions of the parent element div and then inserting into the DOM.
+    Fix the issue(s) with the code.
+    */
+
+    // UNCOMMENT THE CODE BELOW
+    /*
+     const section = document.querySelector('recap');
+     const parentElement = document.createElement('div');
+     const btn = document.createElement('button');
+     btn.innerHTML = 'click me';
+     btn.classList.add('btn');
+     parentElement.insertAdjacentElement('Beforebegin', btn);
+     parentElement.insertAdjacentElement('afterend', btn);
+     section.insertAdjacentElement('beforbegin', parentElement)
+    */
+
+  </script>
+</body>
+
+</html>
