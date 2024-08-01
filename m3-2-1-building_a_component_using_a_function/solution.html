@@ -2,31 +2,30 @@
 <html>
 
 <body>
+  <h1>Building a Component Using a Function SOLUTION</h1>
   <script>
     /*
     PROBLEM 1: Create a function component called buttonMaker that generates an HTML button with the text 'Click Me!'. The function should take two parameters: text (a string) representing the text to be displayed on the button, and onClick (a function) representing the click event handler for the button. When the button is clicked, the handler should console.log('Button Clicked!');
-
-
     */
 
     function buttonMaker(text, onClick) {
       const button = document.createElement('button');
       button.textContent = text;
       button.addEventListener('click', onClick);
+      return button; // Added return statement
     }
 
     function handleClick() {
       console.log('Button Clicked!');
     }
 
-    buttonMaker('Click Me!', handleClick);
-
+    const button = buttonMaker('Click Me!', handleClick);
+    document.body.appendChild(button); // Append button to the body or any other container
 
     /*
     PROBLEM 2: Write a function component called createCard that generates an HTML card element. The function should take three parameters: title (a string) representing the card title, description (a string) representing the card description, and imageUrl (a string) representing the URL of the image to be displayed in the card. Once you write the function, call it with the following parameters:
 
     createCard('Card Title', 'This is a description of the card.', 'https://example.com/image.jpg');
-
     */
 
     function createCard(title, description, imageUrl) {
@@ -41,14 +40,19 @@
 
       const cardImage = document.createElement('img');
       cardImage.src = imageUrl;
+
+      card.appendChild(cardTitle);
+      card.appendChild(cardDescription);
+      card.appendChild(cardImage);
+
+      document.body.appendChild(card); // Append card to the body or any other container
     }
 
     createCard('Card Title', 'This is a description of the card.', 'https://example.com/image.jpg');
 
-
     /*
-   PROBLEM 3: Create a function component called toggleVisibility that toggles the visibility of an HTML element. The function should take the element's id as its only parameter. If the element is currently visible, the function should hide it; if it is hidden, the function should make it visible.
-   */
+    PROBLEM 3: Create a function component called toggleVisibility that toggles the visibility of an HTML element. The function should take the element's id as its only parameter. If the element is currently visible, the function should hide it; if it is hidden, the function should make it visible.
+    */
 
     function toggleVisibility(elementId) {
       const element = document.getElementById(elementId);
@@ -59,8 +63,14 @@
       }
     }
 
-    toggleVisibility('myElement');
+    // Creating a sample element to demonstrate toggleVisibility
+    const sampleElement = document.createElement('div');
+    sampleElement.id = 'myElement';
+    sampleElement.textContent = 'Toggle me!';
+    document.body.appendChild(sampleElement);
 
+    toggleVisibility('myElement');
+    setTimeout(() => toggleVisibility('myElement'), 2000); // Toggle visibility after 2 seconds
 
     /*
     PROBLEM 4: Create a function component called createForm that creates a simple HTML form from the structure below. The function should take no parameters. The form should contain two input fields: one for the name (with the ID nameInput) and one for the email address (with the ID emailInput).
@@ -71,19 +81,19 @@
 
     html structure:
     <form>
-  <label for="nameInput">Name:</label>
-  <input type="text" id="nameInput">
+      <label for="nameInput">Name:</label>
+      <input type="text" id="nameInput">
 
-  <label for="emailInput">Email:</label>
-  <input type="email" id="emailInput">
+      <label for="emailInput">Email:</label>
+      <input type="email" id="emailInput">
 
-  <button type="submit">Submit</button>
-</form>
-
+      <button type="submit">Submit</button>
+    </form>
     */
 
     function createForm() {
       const form = document.createElement('form');
+      form.id = 'form'; // Added ID to the form for toggleVisibility
 
       const nameLabel = document.createElement('label');
       nameLabel.setAttribute('for', 'nameInput');
@@ -101,11 +111,19 @@
       emailInput.setAttribute('type', 'email');
       emailInput.setAttribute('id', 'emailInput');
 
-      const submitButton = buttonMaker('Submit', submitForm);
+      const submitButton = buttonMaker('Submit', (event) => {
+        event.preventDefault();
+        submitForm();
+      });
 
-      return form;
+      form.appendChild(nameLabel);
+      form.appendChild(nameInput);
+      form.appendChild(emailLabel);
+      form.appendChild(emailInput);
+      form.appendChild(submitButton);
+
+      document.body.appendChild(form);
     }
-
 
     function submitForm() {
       const nameInput = document.getElementById('nameInput');
@@ -119,22 +137,17 @@
       }
     }
 
-
+    createForm();
 
     /*
     PROBLEM 5 (DEBUGGING): The following code is intended to change the background color of a paragraph when the mouse hovers over it. However, the background color does not change as expected when the code is executed. Identify and fix the bug to make the hover effect work correctly.
     */
 
     //code
-    const myParagraph = document.getElementById('myParagraph');
-
-    myParagraph.addEventListener('mouseover', function () {
-      myParagraph.classList.add('highlight');
-    });
-
-    myParagraph.addEventListener('mouseout', function () {
-      myParagraph.classList.remove('highlight');
-    });
+    const myParagraph = document.createElement('p');
+    myParagraph.id = 'myParagraph';
+    myParagraph.textContent = 'Hover over me!';
+    document.body.appendChild(myParagraph);
 
     //solution code
     myParagraph.addEventListener('mouseover', function () {
@@ -144,7 +157,6 @@
     myParagraph.addEventListener('mouseout', function () {
       myParagraph.style.backgroundColor = '';
     });
-
   </script>
 
 </body>
