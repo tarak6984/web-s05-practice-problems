@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html id="html">
-  <body id="body">
-    <h1>Practice Problems Webpage</h1>
-    <p>
-      All your solutions for this set of practice problems are located in the
-      Replit console. Please open the console by clicking the wrench icon near
-      the top-right corner of this browser.
-    </p>
 
-    <main id="main">
-      <button id="button">Click Me!</button>
-    </main>
+<body id="body">
+  <h1>Understanding the Phases of Propagation</h1>
 
-    <script>
-      // These variables will be used to solve the problem below
-      const button = document.getElementById("button");
-      const main = document.getElementById("main");
-      const body = document.getElementById("body");
-      const html = document.getElementById("html");
-      /*
-      PROBLEM 1:
-      Add a listener for event of type "click" to the elements right above. The first two are done for you.
-      Also add a click event listener to the `document` object.
-      Open the Console and click on the button. Do you see the click event bubbling up the DOM?
-      */
-      button.addEventListener('click', e => console.log('you clicked the BUTTON!'))
-      main.addEventListener('click', e => console.log('you clicked the MAIN!'))
-      // ENTER YOUR CODE HERE
+  <main id="main">
+    <button id="button">Click Me!</button>
+  </main>
 
-      /*
-      PROBLEM 2:
-      Add a click event listener to the global `window` object, but set it to fire on capture, instead of on bubbling.
-      Open the Console and click on the button. Do you see the captured click event on the `window` object, firing first?
-      */
-      // ENTER YOUR CODE HERE
+  <script>
+    // These variables will be used to solve the problem below
+    const button = document.getElementById("button");
+    const main = document.getElementById("main");
+    const body = document.getElementById("body");
+    const html = document.getElementById("html");
+    /*
+    PROBLEM 1:
+    Add a listener for event of type "click" to the elements right above. The first two are done for you.
+    Also add a click event listener to the `document` object.
+    Open the Console and click on the button. Do you see the click event bubbling up the DOM?
+    */
+    button.addEventListener('click', e => console.log('you clicked the BUTTON!'))
+    main.addEventListener('click', e => console.log('you clicked the MAIN!'))
+    // ENTER YOUR CODE HERE
 
-    </script>
+    /*
+    PROBLEM 2:
+    Add a click event listener to the global `window` object, but set it to fire on capture, instead of on bubbling.
+    Open the Console and click on the button. Do you see the captured click event on the `window` object, firing first?
+    */
+    // ENTER YOUR CODE HERE
+
+  </script>
 
 
-  </body>
+</body>
+
 </html>

@@ -2,29 +2,30 @@
 <html>
 
 <body>
+  <h1>Preventing the Default Action SOLUTION</h1>
   <script>
     /*
-  DIRECTIONS: Below are solutions to all the practice problems for this learning objective.  You can try each solution by copying it into your "index.html" file and clicking "Run".
-  */
+    DIRECTIONS: Below are solutions to all the practice problems for this learning objective.  You can try each solution by copying it into your "index.html" file and clicking "Run".
+    */
     /*
-  Problem 1:
-  */
+    Problem 1:
+    */
     const handleCopy = (event) => {
       event.preventDefault();
     };
     document.addEventListener("copy", handleCopy);
 
     /*
-  Problem 2:
-  */
+    Problem 2:
+    */
     const handleCut = (event) => {
       event.preventDefault();
     };
     document.addEventListener("cut", handleCut);
 
     /*
-  Problem 3:
-  */
+    Problem 3:
+    */
     const hackLink = (event) => {
       event.preventDefault();
       window.open("https://hacked.com", "_blank");
@@ -32,8 +33,8 @@
     document.querySelector("a").addEventListener("click", hackLink);
 
     /*
-  Problem 4:
-  */
+    Problem 4:
+    */
     const hackLink2 = (event) => {
       if (event.target.classList.contains("prevent")) {
         event.preventDefault();
@@ -43,8 +44,8 @@
     document.querySelector("a").removeEventListener("click", hackLink);
     document.querySelector("a").addEventListener("click", hackLink2);
     /*
-  Problem 5: The button has two handlers assigned! You either have to modify or remove the first handler. as preventDefault() will not block other handlers from running.
-  */
+    Problem 5: The button has two handlers assigned! You either have to modify or remove the first handler. as preventDefault() will not block other handlers from running.
+    */
     const handler1 = () => {
       window.alert("Click!");
     };
