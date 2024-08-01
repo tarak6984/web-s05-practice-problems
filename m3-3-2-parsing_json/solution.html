@@ -2,40 +2,40 @@
 <html>
 
 <body>
-  <h1>Practice Problems Webpage</h1>
+  <h1>Parsing JSON SOLUTION</h1>
   <script>
     /*
-  DIRECTIONS: Below are solutions to all the practice problems for this learning objective.  You can try each solution by copying it into your "index.html" file and clicking "Run".
-  */
+    DIRECTIONS: Below are solutions to all the practice problems for this learning objective.  You can try each solution by copying it into your "index.html" file and clicking "Run".
+    */
 
     /*
-  PROBLEM 1: Given the JSON data set below, parse it into the "obj" JS object and log the first "id" of the first "topping".
-  */
+    PROBLEM 1: Given the JSON data set below, parse it into the "obj" JS object and log the first "id" of the first "topping".
+    */
     const json = `{"id":"0001","type":"donut","name":"Cake","ppu":0.55,"batters":{"batter":[{"id":"1001","type":"Regular"},{"id":"1002","type":"Chocolate"},{"id":"1003","type":"Blueberry"},{"id":"1004","type":"Devil's Food"}]},"topping":[{"id":"5001","type":"None"},{"id":"5002","type":"Glazed"},{"id":"5005","type":"Sugar"},{"id":"5007","type":"Powdered Sugar"},{"id":"5006","type":"Chocolate with Sprinkles"},{"id":"5003","type":"Chocolate"},{"id":"5004","type":"Maple"}]}`;
     const obj = JSON.parse(json);
     console.log(obj.topping[0].id);
     /*
-  PROBLEM 2:
-  */
+    PROBLEM 2:
+    */
     const JSONarray = JSON.stringify(obj.topping);
     console.log(JSONarray);
 
     /*
-  PROBLEM 3:
-  */
+    PROBLEM 3:
+    */
     const objJSON =
       '{"family":"proteins","type":"structural","name":"collagen"}';
     // Remember that keys must be enclosed by quotes in a JSON string.
 
     /*
-  PROBLEM 4:
-  */
+    PROBLEM 4:
+    */
     const OBJ = JSON.parse(objJSON);
     Object.values(OBJ).forEach((val) => console.log(val));
 
     /*
-  PROBLEM 5 (DEBUGGING): JSON strings cannot have trailing commas!
-  */
+    PROBLEM 5 (DEBUGGING): JSON strings cannot have trailing commas!
+    */
     const badJSON = '{"id": "0001","type": "donut","name": "Cake"}';
     const parsedJSON = JSON.parse(badJSON);
     console.log(parsedJSON);
