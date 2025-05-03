@@ -1,1 +1,29 @@
 /* Bring your CSS here */
+section {
+    border: 2px solid blue;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 5px 3px 3px orange;
+    margin-top: 20px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #logo {
+    padding: 1.5rem;
+    animation: spin 4s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
