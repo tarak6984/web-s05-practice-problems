@@ -45,17 +45,24 @@
       container.appendChild(night)
       container.appendChild(button)
       // ❗ PROBLEM 1: Give day and night their id attributes
+      day.id = "day";
+      night.id = "night"
 
       // ❗ PROBLEM 2: Give day and night their text contents using emoji '💡' and '🌌' and the button a text of 'Toggle'
-
+      day.textContent = '💡'
+      night.textContent = '🌌'
+      button.textContent = 'Toggle'
       // ❗ PROBLEM 3: Set the night to display none using an inline style
-
+      night.style.display  = "none";
       // ❗ PROBLEM 4: Add an event listener to the button to toggle the style.display of day and night between 'none' and 'block'
-
+      button.addEventListener('click', evt => {
+        day.style.display = (day.style.display == 'none' ? 'block' : 'none')
+        night.style.display = (night.style.display == 'none' ? 'block' : 'none')
+      })
       return container
     }
     // ❗ PROBLEM 5: Invoke the `buildBulbWidget` and append its return value to the div#result in the HTML
-
+  document.querySelector("#result").appendChild(buildBulbWidget())
   </script>
 </body>
 

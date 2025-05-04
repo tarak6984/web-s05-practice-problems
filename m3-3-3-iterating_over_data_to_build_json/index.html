@@ -22,7 +22,11 @@
       - See the unordered list of fruits rendering in the HTML!
     */
     let fruits = ['apples', 'oranges', 'grapes']
-    //ENTER YOUR CODE HERE
+    fruits.forEach(fruit =>{
+      let li = document.createElement("li");
+      li.textContent = fruit;
+      document.querySelector("#problem1").appendChild(li)
+    })
 
     /*
     PROBLEM 2:
@@ -34,11 +38,16 @@
       - See your links rendering in the HTML!
     */
     let links = [
-      { text: 'Home', href: '#home' },
-      { text: 'About', href: '#about' },
-      { text: 'Blog', href: '#blog' },
+      { text: 'Home ', href: '#home' },
+      { text: 'About ', href: '#about' },
+      { text: 'Blog ', href: '#blog' },
     ]
-    //ENTER YOUR CODE HERE
+    links.forEach(link=>{
+      let a = document.createElement("a");
+      a.textContent = link.text;
+      a.href = link.href;
+      document.querySelector("#problem2").appendChild(a);
+    })
 
     /*
     PROBLEM 3:
@@ -54,7 +63,12 @@
       { value: "SP", label: "Spanish" },
       { value: "FR", label: "French" },
     ]
-    //ENTER YOUR CODE HERE
+    languages.forEach(lang=>{
+    let option = document.createElement("option");
+    option.value = lang.value;
+    option.textContent = lang.label;
+    document.querySelector("#problem3").appendChild(option)
+    })
 
   </script>
 </body>

@@ -9,31 +9,37 @@
       */
       const json = `{"id":"0001","type":"donut","name":"Cake","ppu":0.55,"batters":{"batter":[{"id":"1001","type":"Regular"},{"id":"1002","type":"Chocolate"},{"id":"1003","type":"Blueberry"},{"id":"1004","type":"Devil's Food"}]},"topping":[{"id":"5001","type":"None"},{"id":"5002","type":"Glazed"},{"id":"5005","type":"Sugar"},{"id":"5007","type":"Powdered Sugar"},{"id":"5006","type":"Chocolate with Sprinkles"},{"id":"5003","type":"Chocolate"},{"id":"5004","type":"Maple"}]}`;
 
-      //ENTER YOUR CODE HERE
+    const obj = JSON.parse(json);
+    console.log(obj.topping[0].id);
+
+
       /*
       PROBLEM 2: Filter and convert the the previous JS object to a JSON array containing all of the "topping" objects:
       */
-      //ENTER YOUR CODE HERE
-
+      const JSONarray = JSON.stringify(obj.topping) 
+      console.log(JSONarray);
       /*
       PROBLEM 3: Create a JSON string (assign it to the "objJSON" variable) containing a JS object with 3 pairs of arbitrary key/values:
       */
-      //ENTER YOUR CODE HERE
+      const objJSON = '{"family":"proteins", "type":"structural", "name": "collagen"}'
 
       /*
       PROBLEM 4: Convert the previous objJSON to a "OBJ" JS object, and iterate over it to log the 3 values.
       Tip: there are several ways to iterate over JS objs and get the keys and values,
       including the traditional "for (const key in obj)" and new methods such as "Object.values()"
       */
-      //ENTER YOUR CODE HERE
-
+      const OBJ = JSON.parse(objJSON)
+      Object.values(OBJ).forEach(element => {
+         console.log(element);
+      })
       /*
       PROBLEM 5 (DEBUGGING): The following JSON string cannot be parsed into a JS object.
       Fix it and parse it!
       */
 
-      const badJSON = '{"id": "0001","type": "donut","name": "Cake",}';
-      //const parsedJSON = JSON.parse(badJSON);
+      const badJSON = '{"id": "0001","type": "donut","name": "Cake"}';
+   const parsedJSON = JSON.parse(badJSON);
+   console.log(parsedJSON);
    </script>
 </body>
 

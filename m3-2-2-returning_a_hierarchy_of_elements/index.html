@@ -46,15 +46,27 @@
     */
     function planetBuilder(data) {
       // PROBLEM 1: create the elements using `createElement`
-
+   const section = document.createElement("section");
+   const h3 = document.createElement("h3");
+   const div = document.createElement("div");
+   const p1 = document.createElement("p");
+   const p2 = document.createElement("p");
+   const p3 = document.createElement("p")
       // PROBLEM 2: establish the hierarchy/nesting of the elements using `appendChild`
-
+div.appendChild(p1)
+div.appendChild(p2)
+div.appendChild(p3)
+section.appendChild(h3)
+section.appendChild(div)
       // PROBLEM 3: add a class name "planet" to the section element using `classList`
-
+section.classList.add("planet");
       // PROBLEM 4: add `textContent` to the heading and the paragraphs
-
+h3.textContent = data.name;
+p1.textContent = `Diameter ${data.diameter} km`
+p2.textContent = `Rotation ${data.rotation_period} hours`
+p3.textContent = `Orbital Period ${data.rotation_around_sun} days`
       // PROBLEM 5: return the section from the function
-
+  return section;
     }
 
     // ❗ Do not change the code below! It's there to test your function
