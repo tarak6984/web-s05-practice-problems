@@ -16,12 +16,21 @@
     const planetURL = 'https://webapis.bloomtechdev.com/planets/3'
     fetch(planetURL)
       .then(res => {
-        return res.json()
+        return res.json() 
       })
       .then(planet => {
-        console.log(planet)
+    const {name, diameter,rotation_period, rotation_around_sun} = planet ;
+        console.log(`${planet.name} is a planet ${planet.diameter} km in diameter, with a rotation period of ${rotation_period} hours, which takes ${rotation_around_sun} days to go around sun`)
         // ENTER YOUR CODE HERE
       })
+
+/* {
+  "id": 3,
+    "name": "Earth",
+    "diameter": 12756,
+    "rotation_period": 24,
+    "rotation_around_sun": 365
+}*/
 
     /*
     PROBLEM 2:
@@ -29,7 +38,13 @@
     On success, print to the console a message of your liking using the data from the API.
     */
     const marsURL = 'https://webapis.bloomtechdev.com/planets/4'
-    // ENTER YOUR CODE HERE
+    fetch(marsURL)
+    .then(res=>{
+      return res.json();
+    })
+    .then(planet=>{
+      console.log(`${planet.name} is my favorite planet`);
+    })
 
     /*
     PROBLEM 3:
@@ -37,7 +52,15 @@
     On success loop over the planets, at each planet printing "<name> is number <id>" using the data from the API.
     */
     const solarSystemURL = 'https://webapis.bloomtechdev.com/planets'
-    // ENTER YOUR CODE HERE
+    fetch(solarSystemURL)
+    .then(res=>{
+      return res.json();
+    })
+    .then (planet=>{
+      for (p of planet){
+        console.log(`${p.name} is number ${p.id}`)
+      }
+    })
 
   </script>
 </body>

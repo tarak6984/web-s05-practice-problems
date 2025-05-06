@@ -14,11 +14,15 @@
     */
     function evenOrOdd(num) { // rejects if num not even
       // Do not worry about how this function works internally
-      return num % 2 === 0
-        ? Promise.resolve(`${num} is even!`)
-        : Promise.reject(`${num} is odd.`)
+      return num % 2 === 0 ? Promise.resolve(`${num} is even!`) : Promise.reject(`${num} is odd.`)
     }
     // ENTER YOUR CODE HERE
+    evenOrOdd(8).then(result =>{
+      console.log(result);
+    })
+    .catch(result=>{
+      console.log(result);
+    })
 
     /*
     PROBLEM 2:
@@ -31,7 +35,12 @@
         ? Promise.resolve({ data: 'Promises rock!' })
         : Promise.reject(new Error('Server error, could not fetch data'))
     }
-    // ENTER YOUR CODE HERE
+    fetchData().then(value=>{
+      console.log(`The data: ${value.data}`);
+    })
+    .catch(err=>{
+      console.log(`The rejection: ${err.message}`);
+    })
 
     /*
     PROBLEM 3:
@@ -43,6 +52,11 @@
       return Promise.reject(new Error('Cannot connect to the database'))
     }
     // ENTER YOUR CODE HERE
+    queryDatabase().catch(error =>{
+      const message = error.message;
+      const allCaps= message.toUpperCase();
+      document.querySelector("#error").textContent = allCaps
+    })
 
   </script>
 </body>

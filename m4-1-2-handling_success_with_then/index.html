@@ -15,7 +15,13 @@
       return Promise.resolve(`Hello, ${name}!`)
     }
     // ENTER YOUR CODE HERE
+     greetAsync("Jack").then(greet =>{
+      console.log(greet);
+      console.log(greet)
+      console.log(greet);
+     }
 
+     )
     /*
     PROBLEM 2:
     The function coinTossAsync below returns a promise which fulfills a random Boolean (either `true` or `false`).
@@ -25,7 +31,10 @@
       // Do not worry about how this function works internally
       return Promise.resolve(!!Math.floor(Math.random() * 2))
     }
-    // ENTER YOUR CODE HERE
+    coinTossAsync().then(bool=>{
+      console.log(`It's a ${bool ? 'heads': 'tails'}!`)
+    })
+    
 
     /*
    PROBLEM 3:
@@ -38,6 +47,10 @@
       return Promise.resolve(new Date().getFullYear())
     }
     // ENTER YOUR CODE HERE
+    getYearAsync().then(year=>{
+      console.log(`This year is ${year}`);
+      console.log(`I'm ${year-2002} years old`)
+    })
 
   </script>
 </body>
