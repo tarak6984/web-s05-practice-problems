@@ -27,7 +27,31 @@
     */
     const planets = 'https://webapis.bloomtechdev.com/planets'
     axios.get(planets) // ADD YOUR CODE HERE
-
+    .then(res=>{
+      const planets = res.data;
+      planets.forEach(planet => {
+        if(planet.name === "Pluto") return
+      const{name,diameter, rotation_period, rotation_around_sun} = planet;
+      const container = document.createElement("div");
+      const planetName = document.createElement("h3");
+      const planetDiameter = document.createElement("p");
+      const rotation = document.createElement("p");
+      const rotationSun = document.createElement("p");
+      container.appendChild(planetName);
+      container.appendChild(planetDiameter);
+      container.appendChild(rotation);
+      container.appendChild(rotationSun);
+      planetName.textContent = planet.name;
+      planetDiameter.textContent = `Diameter ${planet.diameter} Km`
+      rotation.textContent = `Rotation ${planet.rotation_period} hours`
+      rotationSun.textContent = `Orbital Period: ${planet.rotation_around_sun} days`
+      document.querySelector("#planets").appendChild(container)
+      });
+    })
+    
+   .catch(err=>{
+    console.log(`Something went wrong ${err.message}`)
+   })
     /*
     PROBLEM 2:
     Although this is misguided, find a way to prevent _planet_ Pluto from rendering to the DOM.

@@ -18,8 +18,29 @@
     const planetURL = 'https://webapis.bloomtechdev.com/planets/2'
     axios.get(planetURL)
       .then(response => {
-        // ENTER YOUR CODE HERE
+        console.log(response);
+        let {name, diameter, rotation_period} = response.data
+        console.log(`${name} is a planet ${diameter} Km in diameter, with a rotation period of ${rotation_period} hours.`)
       })
+     
+//  diameter
+// : 
+// 12104
+// id
+// : 
+// 2
+// name
+// : 
+// "Venus"
+// rotation_around_sun
+// : 
+// 225
+// rotation_period
+// : 
+// 243
+
+
+
 
     /*
     PROBLEM 2:
@@ -27,7 +48,10 @@
     On success, print to the console "I am not sure Pluto is a planet!" (obtaining the word "Pluto" from inside the response data).
     */
     const baseURL = 'https://webapis.bloomtechdev.com/planets/'
-    // ENTER YOUR CODE HERE
+    axios.get(baseURL+9)
+    .then(result=>{
+      console.log(`I am not sure ${result.data.name} is a planet`);
+    })
 
     /*
     PROBLEM 3:
@@ -38,8 +62,18 @@
     */
     const badURL = 'https://webapis.bloomtechdev.com/planets/12345'
     // ENTER YOUR CODE HERE
-
+   axios.get(badURL)
+   .catch(err=>{
+    console.log(err)
+    console.log("Sorry, planet with id 12345 does not exist")
+    console.log(err.response.status)
+    console.log(err.response.data.message)
+   })
   </script>
 </body>
 
 </html>
+
+
+
+

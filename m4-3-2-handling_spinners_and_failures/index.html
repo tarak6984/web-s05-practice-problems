@@ -22,11 +22,14 @@
     */
     const snail = 'https://webapis.bloomtechdev.com/slow/snail'
     // START SPINNER HERE
+    document.querySelector("#spinner").style.display = "initial";
     axios.get(snail)
       .then(res => {
         const { name, created_on } = res.data
+        console.log(res)
         document.querySelector('#data').textContent = `The ${name} was created on ${created_on}`
         // STOP SPINNER HERE
+        document.querySelector("#spinner").style.display = "none"
       })
     /*
     PROBLEM 2:
@@ -37,7 +40,10 @@
     const bug = 'https://webapis.bloomtechdev.com/slow/bug'
     axios.get(bug)
     // ADD YOUR CODE HERE
-
+  .catch(error=>{
+    const {message} = error.response.data;
+    document.querySelector("#error").textContent = message;
+  })
   </script>
 </body>
 
